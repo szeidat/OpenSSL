@@ -1206,7 +1206,7 @@ Function New-SelfSignedCertificate {
 
     [Parameter(Mandatory=$false, HelpMessage="Subject alternative name fields (e.g. IP:10.1.1.1, DNS:server.net)", ParameterSetName="General")]
     [ValidateNotNullOrEmpty()]
-    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+$', Options='None')]
+    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+(?:,(IP|DNS|URI|RID|otherName|email):[^,]+)*$', Options='None')]
     [String[]]
     $SubjectAlternative,
 
@@ -1747,7 +1747,7 @@ Function New-CertificateRequest {
 
     [Parameter(Mandatory=$false, HelpMessage="Subject alternative name fields (e.g. IP:10.1.1.1, DNS:server.net)", ParameterSetName="General")]
     [ValidateNotNullOrEmpty()]
-    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+$', Options='None')]
+    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+(?:,(IP|DNS|URI|RID|otherName|email):[^,]+)*$', Options='None')]
     [String[]]
     $SubjectAlternative,
 
@@ -2285,7 +2285,7 @@ Function Invoke-SignCertificateRequest {
 
     [Parameter(Mandatory=$false, HelpMessage="Subject alternative name fields (e.g. IP:10.1.1.1, DNS:server.net)", ParameterSetName="General")]
     [ValidateNotNullOrEmpty()]
-    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+$', Options='None')]
+    [ValidatePattern('^(IP|DNS|URI|RID|otherName|email):[^,]+(?:,(IP|DNS|URI|RID|otherName|email):[^,]+)*$', Options='None')]
     [String[]]
     $SubjectAlternative,
 
